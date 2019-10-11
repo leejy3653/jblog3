@@ -19,7 +19,7 @@ import kr.co.itcen.jblog.vo.CategoryVo;
 import kr.co.itcen.jblog.vo.PostVo;
 import kr.co.itcen.jblog.vo.UserVo;
 
-@RequestMapping("/blog/{id:(?!assets).*}")
+@RequestMapping("/blog/{id:(?!assets)(?!images).*}")
 @Controller
 public class BlogController {
 

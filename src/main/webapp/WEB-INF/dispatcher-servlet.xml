@@ -23,6 +23,8 @@
 	</mvc:annotation-driven>
 	<!-- 파일업로드 경로 -->
 	<mvc:resources location="file:/uploads/" mapping="/images/**" /><!-- D드라이브에 uploads 폴더를 만들어야 함 -->
+	<context:annotation-config/>
+	<context:component-scan base-package="kr.co.itcen.jblog.controller"/>
 	<!-- 서블릿 컨테이너의 디폴트 서블릿 위임 핸들러 -->
 	<mvc:default-servlet-handler />
 	<mvc:interceptors>
