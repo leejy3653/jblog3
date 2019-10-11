@@ -12,7 +12,7 @@
 	href="${pageContext.request.contextPath}/assets/css/jblog.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery/jquery-1.9.0.js"></script>
 </head>
-<script type="text/javascript">
+<script type="text/javascript">/* 자바스크립트 */
 function ajaxremoveCategory(categoryId) {
 	
     $.ajax({
@@ -57,14 +57,11 @@ function ajaxcreateCategory() {
             $('#catName').val('');
             $('#exp').val('');
             alert('카테고리 추가 완료');
+            location.reload();
         }
     });
 }
 </script>
-
-
-
-
 
 <body>
 	<div id="container">
@@ -109,7 +106,7 @@ function ajaxcreateCategory() {
 					</tr>
 					<tr>
 						<td class="s">&nbsp;</td>
-		      			<td><input onclick="ajaxcreateCategory()" type="submit" value="카테고리 추가"></td>
+						<td><input type="button" onclick="ajaxcreateCategory()" value="카테고리 추가" id="admin-cat-add"></td>
 					</tr>
 				</table>
 			</div>
