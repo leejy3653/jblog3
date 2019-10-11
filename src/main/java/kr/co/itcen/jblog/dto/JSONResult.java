@@ -1,0 +1,43 @@
+package kr.co.itcen.jblog.dto;
+
+import kr.co.itcen.jblog.dto.JSONResult;
+
+public class JSONResult {
+
+	private String result;
+	private Object data;
+	private String message;
+
+	public static JSONResult success(Object data) {
+		return new JSONResult(data);
+	}
+
+	public static JSONResult fail(String message) {
+		return new JSONResult(message);
+	}
+
+	private JSONResult() {
+	}
+
+	private JSONResult(Object data) {
+		this.result = "success";
+		this.data = data;
+	}
+
+	private JSONResult(String message) {
+		this.result = "fail";
+		this.message = message;
+	}
+
+	public String getResult() {
+		return result;
+	}
+
+	public Object getData() {
+		return data;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+}
