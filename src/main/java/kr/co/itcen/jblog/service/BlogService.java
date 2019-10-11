@@ -103,4 +103,14 @@ public class BlogService {
 		return filename;
 	}
 
+	public Boolean ajaxremoveCategory(Long catNo) {
+		postDao.ajaxdeletePost(catNo);
+		return 1== categoryDao.ajaxdeleteCategory(catNo);
+	}
+
+	public Long ajaxcreateCategory(CategoryVo catVo) {
+		Long catNo = categoryDao.ajaxinsertCategory(catVo);
+		return catNo;
+	}
+
 }

@@ -7,25 +7,25 @@
 		<![CDATA[
 			insert 
 			  into category 
-			values (null,'카테고리미분류', 'default 값입니다.', now(), #{id})
+			values (null,'카테고리미분류', 'default 값입니다.', now(), #{blog_id})
 		]]>
 	</insert>
 	<select id="getlist" resultType="categoryvo" parameterType="String">
 		<![CDATA[
 			select no, name, exp, date_format(regdate,'%Y/%m/%d')
 			  from category
-			 where blog_id = #{id}
+			 where blog_id = #{blog_id}
 		]]>
 	</select>
 	<select id="list" resultType="categoryvo" parameterType="String">
 		<![CDATA[
 			select count(post.no), 
-					category.name,
-					category.exp,
-					category.no 
+				   category.name,
+				   category.exp,
+				   category.no 
 			  from category left join post 
 				on category.no = post.category_no
-			 where category.blog_id = #{id}
+			 where category.blog_id = #{blog_id}
 			 group by category.no;
 		]]>
 	</select>
@@ -33,7 +33,27 @@
 		<![CDATA[
 			select name, no
 		  	  from category
-		 	 where blog_id = #{id}
+		 	 where blog_id = #{blog_id}
 		]]>
 	</select>
+	
+	<insert id="ajaxinsert" parameterType="categoryvo">
+		<![CDATA[
+		insert 
+		  into category
+		values (null , #{name}, #{exp}, now(), #{blog_id})
+		]]>
+		<selectKey keyProperty="no" resultType="long" order="AFTER">
+        select last_insert_id()
+        </selectKey>
+	</insert>
+	
+	<delete id="ajaxdelete" parameterType="long">
+		<![CDATA[
+			delete 
+			from category
+			where no = #{no}
+		]]>
+	</delete>
+	
 </mapper> 

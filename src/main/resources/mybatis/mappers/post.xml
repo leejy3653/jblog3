@@ -25,4 +25,14 @@
 		  into post
 		values (null, #{title}, #{context}, now(), #{category_no})
 	</insert>
+	
+	<delete id="ajaxdelete" parameterType="long">
+		<![CDATA[
+			delete 
+		 	  from post
+			 where category_no = #{category_no}
+		]]>
+	</delete>
+	
+	
 </mapper>

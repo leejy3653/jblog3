@@ -33,6 +33,11 @@ public class PostDao {
 		return count==1;
 	}
 
+	public int ajaxdeletePost(Long catNo) {
+		return sqlSession.delete("post.ajaxdelete", catNo);
+		
+	}
+
 	
 	
 }

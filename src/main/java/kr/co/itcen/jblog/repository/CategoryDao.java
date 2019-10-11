@@ -33,4 +33,13 @@ public class CategoryDao {
 		return list;
 	}
 
+	public int ajaxdeleteCategory(Long catNo) {
+		return sqlSession.delete("category.ajaxdelete", catNo);
+	}
+
+	public Long ajaxinsertCategory(CategoryVo catVo) {
+		Long catNo= (long) sqlSession.insert("category.ajaxinsert", catVo);
+		return catNo;
+	}
+
 }
