@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import kr.co.itcen.jblog.security.AuthUser;
 import kr.co.itcen.jblog.service.BlogService;
@@ -93,8 +94,13 @@ public class BlogController {
 		blogService.insertPost(postvo);
 		return "redirect:/blog/" + id;
 	}
-	
+
 	// 파일업로드
-	
+	@RequestMapping(value = "/admin/basic", method = RequestMethod.POST)
+	public String blogadmin(@RequestParam(value = "logo-file", required = false) MultipartFile multipartFile,
+			@PathVariable String id, BlogVo vo) {
+		blogService.update(multipartFile, vo);
+		return "redirect:/blog/" + id;
+	}
 
 }

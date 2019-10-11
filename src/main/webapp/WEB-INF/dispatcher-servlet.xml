@@ -21,6 +21,7 @@
 				class="kr.co.itcen.jblog.security.AuthUserHandlerMethodArgumentResolver" />
 		</mvc:argument-resolvers>
 	</mvc:annotation-driven>
+	<!-- 파일업로드 경로 -->
 	<mvc:resources location="file:/uploads/"
 		mapping="/images/**" />
 	<!-- 서블릿 컨테이너의 디폴트 서블릿 위임 핸들러 -->
@@ -39,7 +40,7 @@
 		</mvc:interceptor>
 	</mvc:interceptors>
 
-	<!-- View Resolver -->
+	<!-- 뷰 리졸버 (bean 설정) -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
@@ -48,7 +49,7 @@
 		<property name="suffix" value=".jsp" />
 		<property name="order" value="1" />
 	</bean>
-	
+
 	<!-- MessageSource -->
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
@@ -58,12 +59,14 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<!-- Multipart Resolver -->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<!-- 최대업로드 가능한 바이트크기 -->
 		<property name="maxUploadSize" value="52428800" />
+		<!-- 디스크에 임시 파일을 생성하기 전에 메모리에 보관할수있는 최대 바이트 크기 -->
+		<!-- property name="maxInMemorySize" value="52428800" / -->
 		<!-- defaultEncoding -->
 		<property name="defaultEncoding" value="utf-8" />
 	</bean>

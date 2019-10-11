@@ -21,7 +21,7 @@
 		update blog 
 		   set logo = #{logo},
 			   title = #{title}
-		 where id= #{id}
+		 where id = #{id}
 	]]>
 	</update>
 </mapper>
