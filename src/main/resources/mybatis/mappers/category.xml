@@ -21,7 +21,7 @@
 			select count(post.no) as 'count',
 				   category.name,
 				   category.exp,
-				   category.no as
+				   category.no
 			  from category left join post 
 				on category.no = post.category_no
 			 where category.blog_id = #{id}
