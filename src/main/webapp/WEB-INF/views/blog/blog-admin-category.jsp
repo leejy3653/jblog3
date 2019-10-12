@@ -42,11 +42,9 @@ function ajaxcreateCategory() {
             	var exp = $('#exp').val();
             	var count = 0;
             	
-            	var categoryTr = 
+            	var category_tr = 
             	'<tr blog_id="tr-'+categoryNo+'">'+
-					'<td>'+
-						'<p class="td-category-count">'+topCategoryIndex+'</p>'+
-					'</td>'+
+					'<td>'+'<p class="td-category-count">'+topCategoryIndex+'</p>'+'</td>'+
 					'<td>'+catName+'</td>'+
 					'<td>'+count+'</td>'+
 					'<td>'+exp+'</td>'+
@@ -54,7 +52,7 @@ function ajaxcreateCategory() {
 						'<img onclick="ajaxremoveCategory('+categoryNo+')" src="${pageContext.request.contextPath}/assets/images/delete.jpg">'+
 					'</td>'+
 				'</tr>';
-            $('#category-column').after(categoryTr);
+            $('#category-column').after(category_tr);
             $('#catName').val('');
             $('#exp').val('');
             alert('카테고리 추가 완료');
