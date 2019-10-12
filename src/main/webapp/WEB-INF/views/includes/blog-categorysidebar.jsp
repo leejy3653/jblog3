@@ -8,7 +8,7 @@
 	<ul>
 		<c:forEach items='${list }' var='category'>
 			<li><a
-				href="${pageContext.request.contextPath}/blog/${id}/${category.no}">${category.name}</a></li>
+				href="${pageContext.request.contextPath}/blog/${id}/${category.no}/0">${category.name}</a></li>
 		</c:forEach>
 	</ul>
 </div>
