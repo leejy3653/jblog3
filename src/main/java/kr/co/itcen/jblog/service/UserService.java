@@ -24,7 +24,7 @@ public class UserService {
 		return userDao.get(id) != null;
 	}
 
-	public Boolean insert(UserVo vo) {
+	public Boolean insert(UserVo vo) { // 회원가입과 동시에 dafault값으로 블로그와 카테고리 생성
 		userDao.insert(vo);
 		blogDao.insert(vo.getId());
 		return categoryDao.insert(vo.getId());

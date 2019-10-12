@@ -10,7 +10,8 @@
 <title>JBlog</title>
 <Link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/jblog.css">
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery/jquery-1.9.0.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/assets/js/jquery/jquery-1.9.0.js"></script>
 </head>
 <script type="text/javascript">/* 자바스크립트 */
 function ajaxremoveCategory(categoryId) {
@@ -78,19 +79,17 @@ function ajaxcreateCategory() {
 						<th>삭제</th>
 					</tr>
 					<c:forEach items="${list }" var="categoryvo" varStatus="status">
-					<tr id="tr-${categoryvo.no}">
-						<td>
-						<p class="td-category-count">
-						${list.size()-status.count+1}
-						</p>
-						</td>
-						<td>${categoryvo.name }</td>
-						<td>${categoryvo.count }</td>
-						<td>${categoryvo.exp }</td>
-						<td>
-						<img onclick="ajaxremoveCategory(${categoryvo.no})" src="${pageContext.request.contextPath}/assets/images/delete.jpg">
-						</td>
-					</tr>
+						<tr id="tr-${categoryvo.no}">
+							<td>
+								<p class="td-category-count">${list.size()-status.count+1}</p>
+							</td>
+							<td>${categoryvo.name }</td>
+							<td>${categoryvo.count }</td>
+							<td>${categoryvo.exp }</td>
+							<td><img onclick="ajaxremoveCategory(${categoryvo.no})"
+								src="${pageContext.request.contextPath}/assets/images/delete.jpg">
+							</td>
+						</tr>
 					</c:forEach>
 				</table>
 
@@ -98,20 +97,21 @@ function ajaxcreateCategory() {
 				<table id="admin-cat-add">
 					<tr>
 						<td class="t">카테고리명</td>
-		      			<td><input type="text" id="catName" name="name"></td>
+						<td><input type="text" id="catName" name="name"></td>
 					</tr>
 					<tr>
 						<td class="t">설명</td>
-		      			<td><input type="text" id="exp" name="exp"></td>
+						<td><input type="text" id="exp" name="exp"></td>
 					</tr>
 					<tr>
 						<td class="s">&nbsp;</td>
-						<td><input type="button" onclick="ajaxcreateCategory()" value="카테고리 추가" id="admin-cat-add"></td>
+						<td><input type="button" onclick="ajaxcreateCategory()"
+							value="카테고리 추가" id="admin-cat-add"></td>
 					</tr>
 				</table>
 			</div>
 		</div>
-		<c:import url="/WEB-INF/views/includes/blog-footer.jsp"/>
+		<c:import url="/WEB-INF/views/includes/blog-footer.jsp" />
 	</div>
 </body>
 </html>

@@ -5,5 +5,6 @@
 		href="${pageContext.request.contextPath}/blog/${authUser.id}/admin/basic">기본설정</a></li>
 	<li><a
 		href="${pageContext.request.contextPath}/blog/${authUser.id}/admin/category">카테고리</a></li>
-	<li><a href="${pageContext.request.contextPath}/blog/${authUser.id}/admin/write">글작성</a></li>
+	<li><a
+		href="${pageContext.request.contextPath}/blog/${authUser.id}/admin/write">글작성</a></li>
 </ul>

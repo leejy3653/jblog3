@@ -61,45 +61,47 @@
 	<div class="center-content">
 		<h1 class="logo">JBlog</h1>
 		<c:import url="/WEB-INF/views/includes/home-header.jsp"></c:import>
-		<form:form  modelAttribute="userVo" class="join-form"  id="join-form" method="post"
+		<form:form modelAttribute="userVo" class="join-form" id="join-form"
+			method="post"
 			action="${pageContext.servletContext.contextPath}/user/join">
-			<label class="block-label" for="name">이름</label> 
+			<label class="block-label" for="name">이름</label>
 			<input id="name" name="name" type="text" value="">
-					<spring:hasBindErrors name="userVo">
-						<c:if test='${errors.hasFieldErrors("name") }'>
-							<p
-								style="font-weight: bold; color: red; text-align: left; padding: 2px 0 0 0">
-								<spring:message code='${errors.getFieldError("name").codes[0] }'
-									text='${errors.getFieldError("name").defaultMessage }' />
-							</p>
-						</c:if>
-					</spring:hasBindErrors>
-			 <label class="block-label"
-				for="blog-id">아이디</label> <input id="blog-id" name="id" type="text">
-				<spring:hasBindErrors name="userVo">
-						<c:if test='${errors.hasFieldErrors("id") }'>
-							<p
-								style="font-weight: bold; color: red; text-align: left; padding: 2px 0 0 0">
-								<spring:message code='${errors.getFieldError("id").codes[0] }'
-									text='${errors.getFieldError("id").defaultMessage }' />
-							</p>
-						</c:if>
-					</spring:hasBindErrors>
-			<input id="btn-checkid" type="button" value="id 중복체크"> <img
-				id="img-checkid" style="display: none;"
+			<spring:hasBindErrors name="userVo">
+				<c:if test='${errors.hasFieldErrors("name") }'>
+					<p
+						style="font-weight: bold; color: red; text-align: left; padding: 2px 0 0 0">
+						<spring:message code='${errors.getFieldError("name").codes[0] }'
+							text='${errors.getFieldError("name").defaultMessage }' />
+					</p>
+				</c:if>
+			</spring:hasBindErrors>
+			<label class="block-label" for="blog-id">아이디</label>
+			<input id="blog-id" name="id" type="text">
+			<spring:hasBindErrors name="userVo">
+				<c:if test='${errors.hasFieldErrors("id") }'>
+					<p
+						style="font-weight: bold; color: red; text-align: left; padding: 2px 0 0 0">
+						<spring:message code='${errors.getFieldError("id").codes[0] }'
+							text='${errors.getFieldError("id").defaultMessage }' />
+					</p>
+				</c:if>
+			</spring:hasBindErrors>
+			<input id="btn-checkid" type="button" value="id 중복체크">
+			<img id="img-checkid" style="display: none;"
 				src="${pageContext.request.contextPath}/assets/images/check.png">
 
-			<label class="block-label" for="password">패스워드</label> <input
-				id="password" name="password" type="password" />
-				<spring:hasBindErrors name="userVo">
-						<c:if test='${errors.hasFieldErrors("password") }'>
-							<p
-								style="font-weight: bold; color: red; text-align: left; padding: 2px 0 0 0">
-								<spring:message code='${errors.getFieldError("password").codes[0] }'
-									text='${errors.getFieldError("password").defaultMessage }' />
-							</p>
-						</c:if>
-					</spring:hasBindErrors>
+			<label class="block-label" for="password">패스워드</label>
+			<input id="password" name="password" type="password" />
+			<spring:hasBindErrors name="userVo">
+				<c:if test='${errors.hasFieldErrors("password") }'>
+					<p
+						style="font-weight: bold; color: red; text-align: left; padding: 2px 0 0 0">
+						<spring:message
+							code='${errors.getFieldError("password").codes[0] }'
+							text='${errors.getFieldError("password").defaultMessage }' />
+					</p>
+				</c:if>
+			</spring:hasBindErrors>
 
 			<fieldset>
 				<legend>약관동의</legend>

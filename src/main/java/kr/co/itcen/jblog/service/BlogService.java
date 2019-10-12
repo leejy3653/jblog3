@@ -70,12 +70,12 @@ public class BlogService {
 		String url = "";
 		if (multipartFile == null)
 			return false;
-		
+
 		try {
 			String originalFilename = multipartFile.getOriginalFilename();
 			String extName = originalFilename.substring(originalFilename.lastIndexOf('.') + 1);
 			String saveFileName = generateSaveFilename(extName);
-			//long fileSize = multipartFile.getSize();
+			// long fileSize = multipartFile.getSize();
 			System.out.println("##################################" + originalFilename);
 			System.out.println("##################################" + saveFileName);
 			byte[] fileData = multipartFile.getBytes();
@@ -106,7 +106,7 @@ public class BlogService {
 
 	public Boolean ajaxremoveCategory(Long catNo) {
 		postDao.ajaxdeletePost(catNo);
-		return 1== categoryDao.ajaxdeleteCategory(catNo);
+		return 1 == categoryDao.ajaxdeleteCategory(catNo);
 	}
 
 	public Long ajaxcreateCategory(CategoryVo catVo) {

@@ -25,24 +25,21 @@ public class CategoryController {
 	@ResponseBody
 	@RequestMapping("/remove")
 	public JSONResult remove(@RequestParam(value = "id", required = true, defaultValue = "-1") Long catNo) {
-		
+
 		Boolean result = blogService.ajaxremoveCategory(catNo);
 		if (!result || catNo == -1) {
 			return JSONResult.success(false);
 		}
 		return JSONResult.success(result);
 	}
-	
+
 	@ResponseBody
-	@RequestMapping(value= "/create", method=RequestMethod.POST)
-	public JSONResult create(
-			@ModelAttribute CategoryVo catVo,
-			HttpSession session) {
-		String blog_id = ((UserVo)session.getAttribute("authUser")).getId();
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	public JSONResult create(@ModelAttribute CategoryVo catVo, HttpSession session) {
+		String blog_id = ((UserVo) session.getAttribute("authUser")).getId();
 		catVo.setBlog_id(blog_id);
 		Long result = blogService.ajaxcreateCategory(catVo);
-		
 		return JSONResult.success(result);
 	}
-	
+
 }

@@ -38,7 +38,7 @@ public class CategoryDao {
 	}
 
 	public Long ajaxinsertCategory(CategoryVo catVo) {
-		Long catNo= (long) sqlSession.insert("category.ajaxinsert", catVo);
+		Long catNo = (long) sqlSession.insert("category.ajaxinsert", catVo);
 		return catNo;
 	}
 

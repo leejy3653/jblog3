@@ -16,7 +16,7 @@
 				href="${pageContext.servletContext.contextPath}/user/logout">로그아웃</a></li>
 			<li><a
 				href="${pageContext.servletContext.contextPath}/blog/${authUser.id}">내블로그</a></li>
-			<li>${authUser.id }님 안녕하세요</li>
+			<li>${authUser.id }님안녕하세요</li>
 		</c:otherwise>
 	</c:choose>
 </ul>

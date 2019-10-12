@@ -31,9 +31,9 @@
 							<li><a
 								href="${pageContext.request.contextPath}/blog/${id}/${postvo.category_no}/${postvo.no}">${postvo.title}
 							</a> <span>${postvo.regdate }</span></li>
-					</c:forEach>
+						</c:forEach>
 					</ul>
-				</c:if>				
+				</c:if>
 			</div>
 		</div>
 

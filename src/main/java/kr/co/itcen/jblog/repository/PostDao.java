@@ -16,28 +16,26 @@ public class PostDao {
 	private SqlSession sqlSession;
 
 	public List<PostVo> getList(Long categoryno) {
-		List<PostVo> list=sqlSession.selectList("post.getList",categoryno);
+		List<PostVo> list = sqlSession.selectList("post.getList", categoryno);
 		return list;
 	}
 
-	public PostVo getPost(Long postno,Long categoryno) {
+	public PostVo getPost(Long postno, Long categoryno) {
 		Map<String, Long> map = new HashMap<String, Long>();
 		map.put("no", postno);
 		map.put("category_no", categoryno);
-		PostVo vo = sqlSession.selectOne("post.getPost",map);
+		PostVo vo = sqlSession.selectOne("post.getPost", map);
 		return vo;
 	}
 
 	public Boolean insert(PostVo postvo) {
-		int count=sqlSession.insert("post.insert",postvo);
-		return count==1;
+		int count = sqlSession.insert("post.insert", postvo);
+		return count == 1;
 	}
 
 	public int ajaxdeletePost(Long catNo) {
 		return sqlSession.delete("post.ajaxdelete", catNo);
-		
+
 	}
 
-	
-	
 }

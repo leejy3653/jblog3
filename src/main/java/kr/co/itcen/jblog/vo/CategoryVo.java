@@ -6,7 +6,7 @@ public class CategoryVo {
 	private String exp;
 	private String regdate;
 	private String blog_id;
-	private Long count; //카테고리별 포스트 수
+	private Long count; // 카테고리별 포스트 수
 
 	public Long getNo() {
 		return no;

@@ -13,7 +13,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
 		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
-	<context:annotation-config />	
+	<context:annotation-config />
 	<context:component-scan
 		base-package="kr.co.itcen.jblog.repository,kr.co.itcen.jblog.service">
 		<context:include-filter type="annotation"
