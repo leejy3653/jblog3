@@ -19,13 +19,13 @@
 	</select>
 	<select id="list" resultType="categoryvo" parameterType="String">
 		<![CDATA[
-			select count(post.no), 
+			select count(post.no) as 'count',
 				   category.name,
 				   category.exp,
 				   category.no 
 			  from category left join post 
 				on category.no = post.category_no
-			 where category.blog_id = #{blog_id}
+			 where category.blog_id = #{id}
 			 group by category.no;
 		]]>
 	</select>
