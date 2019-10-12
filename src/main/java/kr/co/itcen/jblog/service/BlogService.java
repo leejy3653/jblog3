@@ -70,16 +70,17 @@ public class BlogService {
 		String url = "";
 		if (multipartFile == null)
 			return false;
-		String originalFilename = multipartFile.getOriginalFilename();
-		String extName = originalFilename.substring(originalFilename.lastIndexOf('.') + 1);
-		String saveFileName = generateSaveFilename(extName);
+		
 		try {
-			
+			String originalFilename = multipartFile.getOriginalFilename();
+			String extName = originalFilename.substring(originalFilename.lastIndexOf('.') + 1);
+			String saveFileName = generateSaveFilename(extName);
+			//long fileSize = multipartFile.getSize();
 			System.out.println("##################################" + originalFilename);
 			System.out.println("##################################" + saveFileName);
-			byte[] fileDate = multipartFile.getBytes();
+			byte[] fileData = multipartFile.getBytes();
 			OutputStream os = new FileOutputStream(SAVE_PATH + "/" + saveFileName);
-			os.write(fileDate);
+			os.write(fileData);
 			os.close();
 			url = URL_PREFIX + "/" + saveFileName;
 		} catch (IOException e) {
