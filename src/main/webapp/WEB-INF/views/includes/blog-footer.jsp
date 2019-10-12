@@ -2,6 +2,6 @@
 	pageEncoding="UTF-8"%>
 <div id="footer">
 	<p>
-		<strong>Spring 이야기</strong> is powered by JBlog (c)2019
+		<strong>${authUser.id}</strong> is powered by JBlog (c)2019
 	</p>
 </div>
